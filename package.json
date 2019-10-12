@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-i18n-switchlocalepath-bug",
+  "version": "1.0.0",
+  "description": "Nuxt starter for CodeSandBox",
+  "author": "Nuxt.js Team",
+  "private": true,
+  "scripts": {
+    "dev": "MINIMAL=1 CSB=1 nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "post-update": "yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@nuxt/http": "^0.3.0",
+    "nuxt": "^2.10.0",
+    "nuxt-i18n": "6.3.0",
+    "reqlim": "^0.0.0"
+  },
+  "keywords": []
+}
