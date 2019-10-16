@@ -11,6 +11,10 @@
           <IconLink/>
         </a>
         <NLink to="/about" class="button--grey">About</NLink>
+        <nuxt-link
+          v-for="locale in availableLocales"
+          :key="locale.code"
+          :to="switchLocalePath(locale.code)">{{ locale.name }}</nuxt-link>
       </div>
     </div>
   </section>
@@ -24,7 +28,18 @@ export default {
   components: {
     Logo,
     IconLink
-  }
+  },
+  computed:{
+    availableLocales () {
+      return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+    }
+  },
+  mounted(){
+    this.$i18n.onLanguageSwitched = (oldLocale, newLocale) => {
+      console.log(oldLocale, newLocale)
+    }
+
+  },
 };
 </script>
 
